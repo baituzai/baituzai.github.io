@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="下载git官网地址选择对应的操作系统及版本进行下载 git图解Workspace  工作区Index / Stage  暂存区Repository  仓库区（或本地仓库）Remote  远程仓库 新建代码库123456# 在当前目录新建一个Git代码库git init# 新建一个目录，将其初始化为Git代码库git init [project-name]# 下载一个项目和它的整个代码历史git c">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令总结">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/git常使用命令总结/index.html">
+<meta property="og:site_name" content="baituzai&#39;s Blog">
+<meta property="og:description" content="下载git官网地址选择对应的操作系统及版本进行下载 git图解Workspace  工作区Index / Stage  暂存区Repository  仓库区（或本地仓库）Remote  远程仓库 新建代码库123456# 在当前目录新建一个Git代码库git init# 新建一个目录，将其初始化为Git代码库git init [project-name]# 下载一个项目和它的整个代码历史git c">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/command.png">
+<meta property="og:updated_time" content="2018-08-05T15:31:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令总结">
+<meta name="twitter:description" content="下载git官网地址选择对应的操作系统及版本进行下载 git图解Workspace  工作区Index / Stage  暂存区Repository  仓库区（或本地仓库）Remote  远程仓库 新建代码库123456# 在当前目录新建一个Git代码库git init# 新建一个目录，将其初始化为Git代码库git init [project-name]# 下载一个项目和它的整个代码历史git c">
+<meta name="twitter:image" content="http://yoursite.com/command.png">
+
+<link rel="canonical" href="http://yoursite.com/2018/08/05/git常使用命令总结/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>git常用命令总结 | baituzai's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baituzai's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/05/git常使用命令总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.ico">
+      <meta itemprop="name" content="baituzai">
+      <meta itemprop="description" content="白兔仔的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baituzai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git常用命令总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-05 23:31:59" itemprop="dateCreated datePublished" datetime="2018-08-05T23:31:59+08:00">2018-08-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git命令/" itemprop="url" rel="index"><span itemprop="name">git命令</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="下载git"><a href="#下载git" class="headerlink" title="下载git"></a>下载git</h3><p><a href="https://git-scm.com/download/" target="_blank" rel="noopener">官网地址</a><br>选择对应的操作系统及版本进行下载</p>
+<h3 id="git图解"><a href="#git图解" class="headerlink" title="git图解"></a>git图解</h3><p><img src="/command.png" alt="git图解"><br>Workspace  工作区<br>Index / Stage  暂存区<br>Repository  仓库区（或本地仓库）<br>Remote  远程仓库</p>
+<h3 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个Git代码库</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">git init [project-name]</span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前的Git配置</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="comment"># 编辑Git配置文件</span></span><br><span class="line">git config -e [--global]</span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line"><span class="comment"># --global 为可选参数，意为全局设置为此用户名和邮箱，如不写则表示当前仓库使用此用户名和邮箱,可以用此方法为不同项目设置不同的git账号</span></span><br><span class="line">git config [--global] user.name <span class="string">"[name]"</span></span><br><span class="line">git config [--global] user.email <span class="string">"[email address]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  添加指定文件到暂存区</span></span><br><span class="line">git add [file1] [file2] ...</span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add [dir]</span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># 添加每个变化前，都会要求确认</span></span><br><span class="line"><span class="comment"># 对于同一个文件的多处变化，可以实现分次提交</span></span><br><span class="line">git add -p</span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">git rm --cached [file]</span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">git commit -m [message]</span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">git commit -a</span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">git commit -v</span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">git commit --amend -m [message]</span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">git branch -a</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b [branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个分支，指向指定commit</span></span><br><span class="line">git branch [branch] [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">git branch --track [branch] [remote-branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 切换到上一个分支</span></span><br><span class="line">git checkout -</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">git branch --<span class="built_in">set</span>-upstream [branch] [remote-branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">git merge [branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 选择一个commit，合并进当前分支</span></span><br><span class="line">git cherry-pick [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 列出所有tag</span></span><br><span class="line">git tag</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个tag在当前commit</span></span><br><span class="line">git tag [tag]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个tag在指定commit</span></span><br><span class="line">git tag [tag] [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 删除本地tag</span></span><br><span class="line">git tag -d [tag]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 删除远程tag</span></span><br><span class="line"><span class="comment">#三种方法</span></span><br><span class="line">git push origin :refs/tags/[tagName]</span><br><span class="line">git push origin :[tagName] <span class="comment">#Version_1.0.0</span></span><br><span class="line">git push origin –delete [tagname]</span><br><span class="line"><span class="comment"># 查看tag信息</span></span><br><span class="line">git show [tag]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 提交指定tag</span></span><br><span class="line">git push [remote] [tag]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 提交所有tag</span></span><br><span class="line">git push [remote] --tags</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个分支，指向某个tag</span></span><br><span class="line">git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
+
+<h3 id="标签实例操作"><a href="#标签实例操作" class="headerlink" title="标签实例操作"></a>标签实例操作</h3><p>本地仓库操作：<br>1：打 tag 标签(在commit 之后，push之前，去添加tag)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -a Version_1.0.0 -m <span class="string">"Version_1.0.0"</span></span><br></pre></td></tr></table></figure>
+
+<p>若有修改想要覆盖原有的tag</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -f Version_1.0.0</span><br></pre></td></tr></table></figure>
+
+<p>2：push 到远程仓库（打完tag之后，去push即可）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//push所有tag到远程仓库：</span><br><span class="line">git push origin --tags</span><br><span class="line">// push单个tag到远程仓库</span><br><span class="line">git push origin --tags Version_1.0.0</span><br></pre></td></tr></table></figure>
+
+<p>push单个tag到远程仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin [tagname]</span><br><span class="line">git push origin Version_1.0.0</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：<br>尽量不要tag名字和分支名字一样，比较麻烦。<br>如果tag名字和分支名字一样的时候，push需要指定refs的详细路径，因为分支和tag在git内部是这样表示的（只是引用），tag只存储所指向的那一次提交：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">refs/tags/&#123;tagnane&#125; refs/heads/branches/&#123;branchnane&#125; </span><br><span class="line"><span class="comment">#所以要这样push相同名字的tag和分支： </span></span><br><span class="line">git push origin refs/tags/product </span><br><span class="line">git push origin refs/heads/branches/product</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-tag常用操作"><a href="#git-tag常用操作" class="headerlink" title="git tag常用操作"></a>git tag常用操作</h3><h4 id="标签分类"><a href="#标签分类" class="headerlink" title="标签分类"></a>标签分类</h4><p>git标签分为两种类型：轻量标签和附注标签。轻量标签是指向提交对象的引用，附注标签则是仓库中的一个独立对象，建议使用附注标签，日后还可以查看标签信息。</p>
+<h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建轻量标签</span></span><br><span class="line">git tag Version_1.0.0 -light</span><br><span class="line"><span class="comment">#创建轻量标签不需要传递参数，直接指定标签名称即可。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建附注标签</span></span><br><span class="line">git tag -a Version_1.0.0 -m <span class="string">"Version_1.0.0"</span></span><br><span class="line"><span class="comment">#创建附注标签时，参数-a即annotated的缩写，指定标签类型，后附标签名。参数m指定标签说明，说明信息会保存在标签对象中。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Release版本</span></span><br><span class="line">git tag -a v0.1.0 -m <span class="string">"release 0.1.0 version"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="查看标签"><a href="#查看标签" class="headerlink" title="查看标签"></a>查看标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#列出当前仓库的所有标签</span></span><br><span class="line">git tag</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出符合模式的标签</span></span><br><span class="line">git tag -l <span class="string">'v0.1.*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看标签版本信息</span></span><br><span class="line">git show v0.1.0</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换标签"><a href="#切换标签" class="headerlink" title="切换标签"></a>切换标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#切换标签与切换分支命令相同</span></span><br><span class="line">git checkout [tagname]</span><br><span class="line"><span class="comment">#切换标签后处于一个空的分支上，即”You are in ‘detached HEAD’ state.”</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#误打或需要修改标签时，需要先将标签删除，再打新标签</span></span><br><span class="line">git tag -d v0.1.2</span><br><span class="line"><span class="comment">#参数-d即delete的缩写，意为删除其后指定的标签。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="补打标签"><a href="#补打标签" class="headerlink" title="补打标签"></a>补打标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#给指定的commit打标签</span></span><br><span class="line">git tag -a Version_1.0.0 49e0cd22f6bd9510fe65084e023d9c4316b446a6</span><br><span class="line"><span class="comment">#打标签不必要在HEAD之上，也可在之前的版本上打，这需要你知道某个提交对象的校验和，通过git log命令获取。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">git status</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示commit历史，以及每次commit发生变更的文件</span></span><br><span class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 搜索提交历史，根据关键词</span></span><br><span class="line">git <span class="built_in">log</span> -S [keyword]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，每个commit占据一行</span></span><br><span class="line">git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件</span></span><br><span class="line">git <span class="built_in">log</span> [tag] HEAD --grep feature</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某个文件的版本历史，包括文件改名</span></span><br><span class="line">git <span class="built_in">log</span> --follow [file]</span><br><span class="line">git whatchanged [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示指定文件相关的每一次diff</span></span><br><span class="line">git <span class="built_in">log</span> -p [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示过去5次提交</span></span><br><span class="line">git <span class="built_in">log</span> -5 --pretty --oneline</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示所有提交过的用户，按提交次数排序</span></span><br><span class="line">git shortlog -sn</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示指定文件是什么人在什么时间修改过</span></span><br><span class="line">git blame [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">git diff</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示暂存区和上一个commit的差异</span></span><br><span class="line">git diff --cached [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新commit之间的差异</span></span><br><span class="line">git diff HEAD</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示两次提交之间的差异</span></span><br><span class="line">git diff [first-branch]...[second-branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示今天你写了多少行代码</span></span><br><span class="line">git diff --shortstat <span class="string">"@&#123;0 day ago&#125;"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">git show [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">git show --name-only [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">git show [commit]:[filename]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">git fetch [remote]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">git remote show [remote]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">git remote add [shortname] [url]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">git pull [remote] [branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">git push [remote] [branch]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">git push [remote] --force</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">git push [remote] --all</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 恢复暂存区的指定文件到工作区</span></span><br><span class="line">git checkout [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 恢复某个commit的指定文件到暂存区和工作区</span></span><br><span class="line">git checkout [commit] [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 恢复暂存区的所有文件到工作区</span></span><br><span class="line">git checkout .</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span><br><span class="line">git reset [file]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 重置暂存区与工作区，与上一次commit保持一致</span></span><br><span class="line">git reset --hard</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span><br><span class="line">git reset [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span><br><span class="line">git reset --hard [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span><br><span class="line">git reset --keep [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 新建一个commit，用来撤销指定commit</span></span><br><span class="line"><span class="comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span><br><span class="line">git revert [commit]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 暂时将未提交的变化移除，稍后再移入</span></span><br><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成一个可供发布的压缩包</span></span><br><span class="line">git archive</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/05/Python入门学习笔记（一）/" rel="prev" title="Python 入门学习笔记（一）">
+      <i class="fa fa-chevron-left"></i> Python 入门学习笔记（一）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/08/26/Linux-上如何安装并切换最新版本的-Python-3-6/" rel="next" title="Linux 上如何安装并切换最新版本的 Python 3.6">
+      Linux 上如何安装并切换最新版本的 Python 3.6 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载git"><span class="nav-number">1.</span> <span class="nav-text">下载git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git图解"><span class="nav-number">2.</span> <span class="nav-text">git图解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建代码库"><span class="nav-number">3.</span> <span class="nav-text">新建代码库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加-删除文件"><span class="nav-number">5.</span> <span class="nav-text">增加/删除文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码提交"><span class="nav-number">6.</span> <span class="nav-text">代码提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">7.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签"><span class="nav-number">8.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签实例操作"><span class="nav-number">9.</span> <span class="nav-text">标签实例操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-tag常用操作"><span class="nav-number">10.</span> <span class="nav-text">git tag常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签分类"><span class="nav-number">10.1.</span> <span class="nav-text">标签分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建标签"><span class="nav-number">10.2.</span> <span class="nav-text">创建标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看标签"><span class="nav-number">10.3.</span> <span class="nav-text">查看标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换标签"><span class="nav-number">10.4.</span> <span class="nav-text">切换标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除标签"><span class="nav-number">10.5.</span> <span class="nav-text">删除标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补打标签"><span class="nav-number">10.6.</span> <span class="nav-text">补打标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看信息"><span class="nav-number">11.</span> <span class="nav-text">查看信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程同步"><span class="nav-number">12.</span> <span class="nav-text">远程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">13.</span> <span class="nav-text">撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">14.</span> <span class="nav-text">其他</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="baituzai"
+      src="/images/favicon.ico">
+  <p class="site-author-name" itemprop="name">baituzai</p>
+  <div class="site-description" itemprop="description">白兔仔的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/baituzai" title="GitHub → https://github.com/baituzai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunday_ever@163.com" title="E-Mail → mailto:sunday_ever@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baituzai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">21k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">19 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

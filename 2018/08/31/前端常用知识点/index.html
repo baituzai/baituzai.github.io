@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="零碎常用的小知识点，记录下来，常看常新。 去掉a标签的下划线text-decoration:none;如果是a标签点击后产生的虚线框，有以下处理方法：a{blr:expression(this.onFocus=this.blur());}//IE下    a:focus{outline:none;}//FF下a.hidefocus{outline:none}如果a标签里面嵌套了img,去掉img的">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端常用知识点">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/前端常用知识点/index.html">
+<meta property="og:site_name" content="baituzai&#39;s Blog">
+<meta property="og:description" content="零碎常用的小知识点，记录下来，常看常新。 去掉a标签的下划线text-decoration:none;如果是a标签点击后产生的虚线框，有以下处理方法：a{blr:expression(this.onFocus=this.blur());}//IE下    a:focus{outline:none;}//FF下a.hidefocus{outline:none}如果a标签里面嵌套了img,去掉img的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/001.jpg">
+<meta property="og:image" content="http://yoursite.com/002.jpg">
+<meta property="og:image" content="http://yoursite.com/003.jpg">
+<meta property="og:updated_time" content="2018-09-01T10:06:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端常用知识点">
+<meta name="twitter:description" content="零碎常用的小知识点，记录下来，常看常新。 去掉a标签的下划线text-decoration:none;如果是a标签点击后产生的虚线框，有以下处理方法：a{blr:expression(this.onFocus=this.blur());}//IE下    a:focus{outline:none;}//FF下a.hidefocus{outline:none}如果a标签里面嵌套了img,去掉img的">
+<meta name="twitter:image" content="http://yoursite.com/001.jpg">
+
+<link rel="canonical" href="http://yoursite.com/2018/08/31/前端常用知识点/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>前端常用知识点 | baituzai's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">baituzai's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/前端常用知识点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.ico">
+      <meta itemprop="name" content="baituzai">
+      <meta itemprop="description" content="白兔仔的个人博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="baituzai's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端常用知识点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-08-31 14:05:06" itemprop="dateCreated datePublished" datetime="2018-08-31T14:05:06+08:00">2018-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-09-01 18:06:28" itemprop="dateModified" datetime="2018-09-01T18:06:28+08:00">2018-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端总结/" itemprop="url" rel="index"><span itemprop="name">前端总结</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>零碎常用的小知识点，记录下来，常看常新。</p>
+<h4 id="去掉a标签的下划线"><a href="#去掉a标签的下划线" class="headerlink" title="去掉a标签的下划线"></a>去掉a标签的下划线</h4><p>text-decoration:none;<br>如果是a标签点击后产生的虚线框，有以下处理方法：<br>a{blr:expression(this.onFocus=this.blur());}//IE下    a:focus{outline:none;}//FF下<br>a.hidefocus{outline:none}<br>如果a标签里面嵌套了img,去掉img的蓝色边框<br>img border:0px;</p>
+<h4 id="a标签的伪类样式"><a href="#a标签的伪类样式" class="headerlink" title="a标签的伪类样式"></a>a标签的伪类样式</h4><p>一组专门的预定义的类称为伪类，主要用来处理超链接的状态。超链接<br>文字的状态可以通过伪类选择符＋样式规则来控制。伪类选择符包括：<br>总: a       表示所有状态下的连接 如 a{color:red}<br>① a:link： 未访问链接 ,如 a:link {color:blue}<br>② a:visited： 已访问链接 ,如 a:visited{color:blue}<br>③ a:active： 激活时（链接获得焦点时）链接的颜色 ,如 a:active{color:blue}<br>④ a:hover： 鼠标移到链接上时 ,如 a:hover {color:blue}<br>一般a:hover和a:visited链接的状态（颜色、下划线等）应该是相同的。<br>前三者分别对应body元素的link、vlink、alink这三个属性。<br>四个“状态”的先后过程是：a:link -&gt;a:hover -&gt;a:active -&gt;a:visited。<br>另外，a:active不能设置有无下划线（总是有的）。 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a &#123;font-size:16px&#125; </span><br><span class="line">a:link &#123;color: blue; text-decoration:none;&#125; //未访问：蓝色、无下划线 </span><br><span class="line">a:active:&#123;color: red; &#125; //激活：红色 </span><br><span class="line">a:visited &#123;color:purple;text-decoration:none;&#125; //已访问：紫色、无下划线 </span><br><span class="line">a:hover &#123;color: red; text-decoration:underline;&#125; //鼠标移近：红色、下划线</span><br></pre></td></tr></table></figure>
+
+<h4 id="ms-moz-webkit-o-含义及各浏览器内核整理"><a href="#ms-moz-webkit-o-含义及各浏览器内核整理" class="headerlink" title="-ms-,-moz-,-webkit-,-o-含义及各浏览器内核整理"></a>-ms-,-moz-,-webkit-,-o-含义及各浏览器内核整理</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">transform:rotate(30deg);  //统一标识语句</span><br><span class="line">-ms-transform:rotate(30deg);  //-ms代表ie内核识别码</span><br><span class="line">-moz-transform:rotate(30deg);  //-moz代表火狐内核识别码</span><br><span class="line">-webkit-transform:rotate(30deg);  //-webkit代表苹果的Safari浏览器及谷歌内核识别码</span><br><span class="line">-o-transform:rotate(30deg);  //-o代表欧朋【opera】内核识别码</span><br></pre></td></tr></table></figure>
+
+<h5 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h5><p>一、Trident内核代表产品Internet Explorer，又称其为IE内核。Trident（又称为MSHTML），是微软开发的一种排版引擎。使用Trident渲染引擎的浏览器包括：IE、傲游、世界之窗浏览器、Avant、腾讯TT、Netscape 8、NetCaptor、Sleipnir、GOSURF、GreenBrowser和KKman等。</p>
+<p>二、Gecko内核代表作品Mozilla FirefoxGecko是一套开放源代码的、以C++编写的网页排版引擎。Gecko是最流行的排版引擎之一，仅次于Trident。使用它的最著名浏览器有Firefox、Netscape6至9。</p>
+<p>三、WebKit内核代表作品Safari、Chromewebkit 是一个开源项目，包含了来自KDE项目和苹果公司的一些组件，主要用于Mac OS系统，它的特点在于源码结构清晰、渲染速度极快。缺点是对网页代码的兼容性不高，导致一些编写不标准的网页无法正常显示。主要代表作品有Safari和Google的浏览器Chrome。</p>
+<p>四、Presto内核代表作品OperaPresto是由Opera Software开发的浏览器排版引擎，供Opera 7.0及以上使用。它取代了旧版Opera 4至6版本使用的Elektra排版引擎，包括加入动态功能，例如网页或其部分可随着DOM及Script语法的事件而重新排版。</p>
+<h4 id="css设置禁止文字被鼠标选中"><a href="#css设置禁止文字被鼠标选中" class="headerlink" title="css设置禁止文字被鼠标选中"></a>css设置禁止文字被鼠标选中</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user-select:none; //统一</span><br><span class="line">-webkit-user-select:none; //-webkit代表苹果的Safari浏览器及谷歌内核识别码</span><br><span class="line">-ms-user-select:none;  //-ms代表ie内核识别码</span><br><span class="line">-moz-user-select: none; //-moz代表火狐内核识别码</span><br><span class="line">-o-user-select:none; //-o代表欧朋【opera】内核识别码</span><br><span class="line">//此条可忽略</span><br><span class="line">-khtml-user-select:none; //-khtml-是苹果的那个浏览器的 现在使用-webkit-</span><br></pre></td></tr></table></figure>
+
+<h4 id="css-伪类-last-child等不起作用"><a href="#css-伪类-last-child等不起作用" class="headerlink" title="css 伪类:last-child等不起作用"></a>css 伪类:last-child等不起作用</h4><p><a href="https://www.cnblogs.com/finn-Reo/p/5899566.html" title="详细举例待测试" target="_blank" rel="noopener">参考链接</a></p>
+<h4 id="css3动画特效：上下晃动的div（引导箭头）"><a href="#css3动画特效：上下晃动的div（引导箭头）" class="headerlink" title="css3动画特效：上下晃动的div（引导箭头）"></a>css3动画特效：上下晃动的div（引导箭头）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        /**</span><br><span class="line">        * transform-origin 设置旋转元素的基点位置</span><br><span class="line">        * animation-name 设置动画名称</span><br><span class="line">        * animation-duration 设置动画时间</span><br><span class="line">        * animation-fill-mode 设置播放后的状态</span><br><span class="line">        * animation-iteration-count 设置循环播放的次数</span><br><span class="line">        * transition-timing-function: cubic-bezier 贝塞尔曲线效果，它有四个值，指在X轴与Y轴的两个曲线的点，第一个点：X1 Y1;第二个点：X2 Y2</span><br><span class="line">        * transform: translate3d 设置动画Z轴位移几个元素，表示只在Z轴上移动</span><br><span class="line">        *</span><br><span class="line">        * 需要注意：transform: translate3d 不等于 transform: translateZ</span><br><span class="line">        */</span><br><span class="line">        .animated &#123;</span><br><span class="line">            animation-duration: 1s; /*动画时间*/</span><br><span class="line">            animation-fill-mode: both; /*播放后的状态*/</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .animated &#123;</span><br><span class="line">            animation-iteration-count: infinite; /*动作循环的次数：infinite 无限循环*/</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .animated &#123;</span><br><span class="line">            animation-duration: 2s; /*动画时间*/</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .container &#123;</span><br><span class="line">            background: <span class="comment">#2D97DB;</span></span><br><span class="line">            width: 90%;</span><br><span class="line">            height: 90%;</span><br><span class="line">            padding: 100px;</span><br><span class="line">            margin: 20px auto;</span><br><span class="line">            font-family: <span class="string">"微软雅黑"</span>;</span><br><span class="line">            font-size: 40px;</span><br><span class="line">            color: white;</span><br><span class="line">            text-align: center;</span><br><span class="line">            line-height: 90%;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .container:hover&#123;</span><br><span class="line">            animation-name:container; /*动画的名称*/</span><br><span class="line">            transform-origin: center bottom; /*设置动画旋转元素的基点为：居中靠下*/</span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @keyframes container&#123;</span><br><span class="line">            0%,</span><br><span class="line">            100%,</span><br><span class="line">            20%,</span><br><span class="line">            50%,</span><br><span class="line">            80% &#123;</span><br><span class="line">            transition-timing-function: cubic-bezier(0.215,.61,.355,1); /*贝塞尔曲线 ： X1 Y1 X2 Y2*/</span><br><span class="line">            transform: translate3d(0,0,0); /*设置只在Z轴上移动*/</span><br><span class="line">            &#125;</span><br><span class="line">            40%,</span><br><span class="line">            43%&#123;</span><br><span class="line">            transition-timing-function: cubic-bezier(0.755,0.50,0.855,0.060);</span><br><span class="line">            transform: translate3d(0,-30px,0);</span><br><span class="line">            &#125;</span><br><span class="line">            70%&#123;</span><br><span class="line">            transition-timing-function: cubic-bezier(0.755,0.050,0.855,0.060);</span><br><span class="line">            transform: translate3d(0,-15px,0);</span><br><span class="line">            &#125;</span><br><span class="line">            90%&#123;</span><br><span class="line">            transform: translate3d(0,-4px,0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"square"</span> class=<span class="string">"container animated"</span>&gt;上下晃动&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS3属性transform详解"><a href="#CSS3属性transform详解" class="headerlink" title="CSS3属性transform详解"></a>CSS3属性transform详解</h4><p>在CSS3中，可以利用transform功能来实现文字或图像的旋转、缩放、倾斜、移动这四种类型的变形处理，本文将对此做详细介绍。</p>
+<h5 id="一-旋转-rotate"><a href="#一-旋转-rotate" class="headerlink" title="一.旋转 rotate"></a>一.旋转 rotate</h5><p>用法：transform: rotate(45deg);</p>
+<p>共一个参数“角度”，单位deg为度的意思，正数为顺时针旋转，负数为逆时针旋转，上述代码作用是顺时针旋转45度。</p>
+<h5 id="二-缩放-scale"><a href="#二-缩放-scale" class="headerlink" title="二.缩放 scale"></a>二.缩放 scale</h5><p>用法：transform: scale(0.5)  或者  transform: scale(0.5, 2);</p>
+<p>参数表示缩放倍数；</p>
+<p>一个参数时：表示水平和垂直同时缩放该倍率<br>两个参数时：第一个参数指定水平方向的缩放倍率，第二个参数指定垂直方向的缩放倍率。</p>
+<h5 id="三-倾斜-skew"><a href="#三-倾斜-skew" class="headerlink" title="三.倾斜 skew"></a>三.倾斜 skew</h5><p>用法：transform: skew(30deg)  或者 transform: skew(30deg, 30deg);</p>
+<p>参数表示倾斜角度，单位deg</p>
+<p>一个参数时：表示水平方向的倾斜角度；<br>两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度。<br>关于skew倾斜角度的计算方式表面上看并不是那么直观，这里借鉴某大拿绘制的图举例说明一下：</p>
+<p>首先需要说明的是skew的默认原点transform-origin是这个物件的中心点</p>
+<p>skewX(30deg) 如下图：<br><img src="/001.jpg" alt="30度"><br>skewY(10deg) 如下图<br><img src="/002.jpg" alt="10度"><br>skew(30deg, 10deg) 如下图：<br><img src="/003.jpg" alt="30度"></p>
+<h5 id="四-移动-translate"><a href="#四-移动-translate" class="headerlink" title="四.移动 translate"></a>四.移动 translate</h5><p>用法：transform: translate(45px)  或者 transform: skew(45px, 150px);</p>
+<p>参数表示移动距离，单位px，</p>
+<p>一个参数时：表示水平方向的移动距离；<br>两个参数时：第一个参数表示水平方向的移动距离，第二个参数表示垂直方向的移动距离。</p>
+<h5 id="五-基准点-transform-origin"><a href="#五-基准点-transform-origin" class="headerlink" title="五.基准点 transform-origin"></a>五.基准点 transform-origin</h5><p>在使用transform方法进行文字或图像的变形时，是以元素的中心点为基准点进行的。使用transform-origin属性，可以改变变形的基准点。</p>
+<p>用法：transform-origin: 10px 10px;</p>
+<p>共两个参数，表示相对左上角原点的距离，单位px，第一个参数表示相对左上角原点水平方向的距离，第二个参数表示相对左上角原点垂直方向的距离；</p>
+<p>两个参数除了可以设置为具体的像素值，其中第一个参数可以指定为left、center、right，第二个参数可以指定为top、center、bottom。</p>
+<h5 id="六-多方法组合变形"><a href="#六-多方法组合变形" class="headerlink" title="六.多方法组合变形"></a>六.多方法组合变形</h5><p>上面我们介绍了使用transform对元素进行旋转、缩放、倾斜、移动的方法，这里讲介绍综合使用这几个方法来对一个元素进行多重变形。</p>
+<p>用法：transform: rotate(45deg) scale(0.5) skew(30deg, 30deg) translate(100px, 100px);</p>
+<p>这四种变形方法顺序可以随意，但不同的顺序导致变形结果不同，原因是变形的顺序是从左到右依次进行，这个用法中的执行顺序为1.rotate  2.scalse  3.skew  4.translate</p>
+<h4 id="js-禁止浏览器默认的图片拖动效果"><a href="#js-禁止浏览器默认的图片拖动效果" class="headerlink" title="js 禁止浏览器默认的图片拖动效果"></a>js 禁止浏览器默认的图片拖动效果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  var imgs = document.getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line">  <span class="keyword">for</span> (var i = 0; i &lt; imgs.length - 1; i++) &#123;</span><br><span class="line">    this.onmousedown = <span class="keyword">function</span>(e) &#123;</span><br><span class="line">      e.preventDefault();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除git本地创建的仓库"><a href="#删除git本地创建的仓库" class="headerlink" title="删除git本地创建的仓库"></a>删除git本地创建的仓库</h4><p>在目标文档所在地，右击，选择git bash here<br>输入下面的这条指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm .git -rf</span><br></pre></td></tr></table></figure>
+
+<h4 id="CSS3的calc-使用"><a href="#CSS3的calc-使用" class="headerlink" title="CSS3的calc()使用"></a>CSS3的calc()使用</h4><p>参考链接：待总结 <a href="https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html" target="_blank" rel="noopener">calc()使用</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/css/" rel="tag"># css</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/30/markdown基本语法/" rel="prev" title="markdown基本语法">
+      <i class="fa fa-chevron-left"></i> markdown基本语法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/09/02/Liunx系统常用操作命令/" rel="next" title="Liunx系统常用操作命令">
+      Liunx系统常用操作命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#去掉a标签的下划线"><span class="nav-number">1.</span> <span class="nav-text">去掉a标签的下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a标签的伪类样式"><span class="nav-number">2.</span> <span class="nav-text">a标签的伪类样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ms-moz-webkit-o-含义及各浏览器内核整理"><span class="nav-number">3.</span> <span class="nav-text">-ms-,-moz-,-webkit-,-o-含义及各浏览器内核整理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器内核"><span class="nav-number">3.1.</span> <span class="nav-text">浏览器内核</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css设置禁止文字被鼠标选中"><span class="nav-number">4.</span> <span class="nav-text">css设置禁止文字被鼠标选中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css-伪类-last-child等不起作用"><span class="nav-number">5.</span> <span class="nav-text">css 伪类:last-child等不起作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css3动画特效：上下晃动的div（引导箭头）"><span class="nav-number">6.</span> <span class="nav-text">css3动画特效：上下晃动的div（引导箭头）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3属性transform详解"><span class="nav-number">7.</span> <span class="nav-text">CSS3属性transform详解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一-旋转-rotate"><span class="nav-number">7.1.</span> <span class="nav-text">一.旋转 rotate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二-缩放-scale"><span class="nav-number">7.2.</span> <span class="nav-text">二.缩放 scale</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三-倾斜-skew"><span class="nav-number">7.3.</span> <span class="nav-text">三.倾斜 skew</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四-移动-translate"><span class="nav-number">7.4.</span> <span class="nav-text">四.移动 translate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#五-基准点-transform-origin"><span class="nav-number">7.5.</span> <span class="nav-text">五.基准点 transform-origin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#六-多方法组合变形"><span class="nav-number">7.6.</span> <span class="nav-text">六.多方法组合变形</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#js-禁止浏览器默认的图片拖动效果"><span class="nav-number">8.</span> <span class="nav-text">js 禁止浏览器默认的图片拖动效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除git本地创建的仓库"><span class="nav-number">9.</span> <span class="nav-text">删除git本地创建的仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3的calc-使用"><span class="nav-number">10.</span> <span class="nav-text">CSS3的calc()使用</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="baituzai"
+      src="/images/favicon.ico">
+  <p class="site-author-name" itemprop="name">baituzai</p>
+  <div class="site-description" itemprop="description">白兔仔的个人博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/baituzai" title="GitHub → https://github.com/baituzai" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunday_ever@163.com" title="E-Mail → mailto:sunday_ever@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">baituzai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">21k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">19 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
